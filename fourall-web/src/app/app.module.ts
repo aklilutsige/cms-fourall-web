@@ -1,37 +1,37 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppCMSMaterialModule } from './app-cms-material.module';
 
-import {HeaderComponent} from './header/header.component';
+import { AppRoutingModule,routingComponents } from './app-routing.module';
+import { HeaderComponent} from './header/header.component';
 import { UserComponent } from './user/user.component';
-import { UserListComponent } from './user/user-list/user-list.component';
-import { UserEditComponent } from './user/user-edit/user-edit.component';
-import { UserDeleteComponent } from './user/user-delete/user-delete.component';
-import { UserAddComponent } from './user/user-add/user-add.component';
-
+import { UserHeaderComponent } from './user/user-header/user-header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './services/user.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    UserComponent,
-    UserListComponent,
-    UserEditComponent,
-    UserDeleteComponent,
-    UserAddComponent
-  ],
+  AppComponent,
+  HeaderComponent,
+  UserComponent,
+  UserHeaderComponent
+  ,routingComponents
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AppCMSMaterialModule
+    AppCMSMaterialModule,
+    FormsModule,HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

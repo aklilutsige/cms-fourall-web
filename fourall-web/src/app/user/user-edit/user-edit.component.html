@@ -1,1 +1,106 @@
-<p>user-edit works!</p>
+<app-user-header></app-user-header>
+<div class="user-edit-container">
+  <mat-drawer-container >
+    <mat-drawer mode="side" opened>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"
+          ><mat-icon>search</mat-icon></span
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+      <mat-selection-list #userSelect [multiple]="false">
+        <mat-list-option *ngFor="let user of users" [value]="user.firstName">
+          <p (click)="userOnSelect(user)">
+            {{ user.firstName }} {{ user.lastName }}
+          </p>
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="container">
+          <div *ngIf="dangerDelete" class="alert alert-danger" role="alert">
+            <mat-icon>information</mat-icon>
+            <p>{{editeDeleteUser.firstName }}  {{editeDeleteUser.lastName}} successfuly deleted!</p>
+          </div>
+          <div *ngIf="successUpdate" class="alert alert-success" role="alert">
+            <mat-icon>information</mat-icon>
+            <p>{{editeDeleteUser.firstName }}  {{editeDeleteUser.lastName}} successfuly updated!</p>
+          </div>
+        <div class="row">
+          <div class="col-12">
+            <div appearance="fill">
+                <div>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="firstName" />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="lastName" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label>User name</label>
+                        <input type="text" class="form-control" [(ngModel)]="userName"  />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">User role</label>
+                        <input type="text" class="form-control" [(ngModel)]="role" />
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">New user role</label>
+                        <Select class="form-control" >
+                          <option selected >User</option>
+                          <option>Admi</option>
+                        </Select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6 form-group">
+                      <label>Email</label>
+                      <input type="email" class="form-control" [(ngModel)]="email">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label>Remark</label>
+                        <textarea class="form-control" rows="2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div>
+                  <input type="checkbox" class="form-check-input"/>
+                  <label class="form-check-label" >Enable </label>
+                </div>
+                <div class="row form-group"  >
+                  <div class="col-8"></div>
+                  <div class="col-2"><button (click)="onUpdateUser()" type="submit" class="btn btn-primary">Update</button></div>
+                  <div class="col-2"><button (click)="onDeleteUser()" type="submit" class="btn btn-primary">Delete</button></div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

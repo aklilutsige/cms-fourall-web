@@ -1,48 +1,61 @@
-
-<div class="alert alert-dark" role="alert">
-  Add New User
+<app-user-header></app-user-header>
+<br>
+<div *ngIf="errorInputForm" >
+  <div class="alert alert-danger" >
+    <mat-icon>information  </mat-icon>
+    <p>Enter all input before add ! </p>
+  </div>
 </div>
-<form class="row g-3">
+<div *ngIf="!formAddNewUser">
+  <div class="alert alert-success" role="alert">
+    <mat-icon>information </mat-icon>
+    <p>The new user {{this.inputFirstName + " " | uppercase }}added successfully !</p>
+    <button (click)="addNewUser()" type="button" class="btn btn-success btn-lm">Add New</button>
+  </div>
+
+</div>
+
+<div *ngIf="formAddNewUser" class="row g-3">
   <div class="col-md-6">
-    <label for="inputFirstName" class="form-label">First Name</label>
-    <input type="text" class="form-control">
+    <label class="form-label">First Name</label>
+    <input type="text" class="form-control" [(ngModel)]="inputFirstName" >
   </div>
   <div class="col-md-6">
-    <label for="inputLastName" class="form-label">Last Name</label>
-    <input type="text" class="form-control">
+    <label class="form-label">Last Name</label>
+    <input #lastName type="text" class="form-control" [(ngModel)]="inputLastName">
   </div>
   <div class="col-md-6">
-    <label for="inputUserRole" class="form-label">User Role</label>
-    <select id="inputUserRole" class="form-control">
-      <option selected>Choose...</option>
-      <option>Admin</option>
+    <label  class="form-label">User Role</label>
+    <select id="inputUserRole" class="form-control"  [(ngModel)]="inputUserRole">
+      <option>Administrator</option>
       <option>User</option>
     </select>
   </div>
   <div class="col-12">
-    <label for="inputUserName" class="form-label">User Name</label>
-    <input type="text" class="form-control"  placeholder="">
+    <label  class="form-label">User Name</label>
+    <input  type="text" class="form-control"   [(ngModel)]="inputUserName">
   </div>
   <div class="col-md-12">
-    <label for="inputUserEmail" class="form-label">Email</label>
-    <input type="email" class="form-control"  placeholder="@">
+    <label  class="form-label">Email</label>
+    <input type="email" class="form-control"  [(ngModel)]="inputUserEmail">
   </div>
   <div class="col-md-6">
-    <label for="inputCity" class="form-label">Password</label>
-    <input type="password" class="form-control" >
+    <label class="form-label">Password</label>
+    <input type="password" class="form-control"  [(ngModel)]="inputUserpassword">
   </div>
   <div class="col-md-6">
-    <label for="inputCity" class="form-label">Confirm Password</label>
-    <input type="password" class="form-control" >
+    <label class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" [(ngModel)]="re_inputUserpassword">
   </div>
   <div class="col-md-4">
-    <label for="inputState" class="form-label">User photo</label>
-    <select id="inputState" class="form-control">
-      <option selected>Choose...</option>
-      <option>...</option>
+    <label for="inputState" class="form-label">Role ID</label>
+    <select id="inputState" class="form-control" [(ngModel)]="inputUserRoleId">
+      <option>1</option>
+      <option>2</option>
     </select>
   </div>
   <div class="col-12">
+    <br>
     <div class="form-check">
       <input class="form-check-input " type="checkbox">
       <label class="form-check-label  " for="gridCheck">
@@ -50,7 +63,29 @@
       </label>
     </div>
   </div>
-  <div class="col-md-12">
-    <button type="submit" class="btn btn-secondary">Add User</button>
+  <div class="col-md-12 btn text-right" >
+    <button (click)="addNewUser()" type="submit" class="btn btn-primary">Add User</button>
   </div>
-</form>
+</div>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role </th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of addedUsersList; let i =index">
+      <th scope="row">{{i +1}}</th>
+      <td>{{user.firstName}}</td>
+      <td>{{user.userEmail}}</td>
+      <td>{{user.userRole}}</td>
+      <td><mat-icon>check</mat-icon></td>
+    </tr>
+    </tbody>
+</table>
+

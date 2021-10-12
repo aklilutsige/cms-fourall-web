@@ -1,41 +1,51 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet>
-  <app-header></app-header>
-  <div class="cms-nav">
-    <ul class="nav nav-tabs">
+<app-header></app-header>
+<div class="cms-nav">
+  <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Community setting</a>
+      <a class="nav-link active" aria-current="page" href="#">User</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link "  >Member</a>
+      <a class="nav-link">Member</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link "  >Professional experience</a>
+      <a class="nav-link">Professional experience</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link "  >Education </a>
+      <a class="nav-link">Education </a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link ">Education</a>
+    <li class="nav-item">
+      <a class="nav-link">Education</a>
     </li>
   </ul>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-     <p>User</p>
-     <p>Country</p>
-     <p></p>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
+    <div>
+      <!--<label>User Name</label>-->
+      <!-- <input  type="text" (input)="onUpdateUserName($event)"/> -->
+      <!--<input type="text" [(ngModel)]="userName" />
+      <button (click)="addNewUser()">Add User</button>
+      <div *ngIf="userListStatus; else noUserList">
+        <ul
+          class="list-group"
+          *ngFor="let user of getUserNameList(); let i = index"
+        >
+          <li class="list-group-item" (dblclick)="onRemoveUser(i)">
+            {{ user }}
+          </li>
+        </ul>
+      </div>
+      <ng-template #noUserList>
+        <p>No user list</p>
+      </ng-template>
+    -->
     </div>
     <div class="col-md-10">
-      <div>
-        <div class="col-md-10">
-          <!-- <app-user-add></app-user-add>-->
-          <app-user-list></app-user-list>
-          <app-user-delete></app-user-delete>
-        </div>
-      </div>
+      <router-outlet></router-outlet>
     </div>
   </div>
-</router-outlet>
+</div>
