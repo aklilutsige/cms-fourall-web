@@ -15,7 +15,7 @@
         />
       </div>
       <mat-selection-list #userSelect [multiple]="false">
-        <mat-list-option *ngFor="let user of users" [value]="user.firstName">
+        <mat-list-option *ngFor="let user of getUserListOrderByName()" [value]="user.firstName">
           <p (click)="userOnSelect(user)">
             {{ user.firstName }} {{ user.lastName }}
           </p>

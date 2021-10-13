@@ -14,8 +14,8 @@ export class UserEditComponent implements OnInit {
   users: IUser[] = [];
   editeDeleteUser: IUser;
   updateUser: User;
-  successUpdate:boolean =false;
-  dangerDelete:boolean= false;
+  successUpdate: boolean = false;
+  dangerDelete: boolean = false;
 
   firstName: string;
   lastName: string;
@@ -33,9 +33,13 @@ export class UserEditComponent implements OnInit {
       this.users = data;
     });
   }
+  getUserListOrderByName(){
+
+    return  this.users.sort((u1, u2) => 0 - (u1.firstName  < u2.firstName ? 1 : -1));
+  }
   userOnSelect(user: IUser) {
     this.successUpdate = false;
-    this.dangerDelete =false;
+    this.dangerDelete = false;
     this.editeDeleteUser = user;
     this.firstName = user.firstName;
     this.lastName = user.lastName;
@@ -61,6 +65,6 @@ export class UserEditComponent implements OnInit {
   }
   onDeleteUser() {
     this.userService.deleteExistedUser(this.editeDeleteUser.userId);
-    this.dangerDelete =true;
+    this.dangerDelete = true;
   }
 }

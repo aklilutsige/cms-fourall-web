@@ -23,6 +23,9 @@ export class UserListComponent implements OnInit {
       this.users = data;
     });
   }
+  getUsersListOrderByFirstName(){
+    return  this.users.sort((u1, u2) => 0 - (u1.firstName  < u2.firstName ? 1 : -1));
+  }
   setUserById(userId:number){
     this.userService.getUserById(userId).subscribe((data)=>{this.userById = data})
   }
