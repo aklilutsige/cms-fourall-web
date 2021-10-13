@@ -12,6 +12,7 @@ import { UserComponent } from './user/user.component';
 import { UserHeaderComponent } from './user/user-header/user-header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
+import { ContinentService } from './services/continent.service';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { UserService } from './services/user.service';
     FormsModule,HttpClientModule
   ],
   providers: [
-    UserService
+    UserService,ContinentService
   ],
   bootstrap: [AppComponent]
 })

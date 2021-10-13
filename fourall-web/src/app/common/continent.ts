@@ -9,7 +9,7 @@ export class Continent {
   }
 }
 
-export interface Continent {
+export interface IContinent {
   continentId:number
   continentName:string
   continentImage:any
