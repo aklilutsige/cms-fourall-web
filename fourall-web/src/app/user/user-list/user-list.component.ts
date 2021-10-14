@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/common/user';
+import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -24,6 +24,7 @@ export class UserListComponent implements OnInit {
     });
   }
   getUsersListOrderByFirstName(){
+
     return  this.users.sort((u1, u2) => 0 - (u1.firstName  < u2.firstName ? 1 : -1));
   }
   setUserById(userId:number){

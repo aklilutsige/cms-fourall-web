@@ -6,7 +6,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -14,18 +16,19 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    MatCardModule,
     MatListModule,
-    MatSidenavModule,MatFormFieldModule
+    MatSidenavModule,MatFormFieldModule,MatMenuModule, MatTabsModule,
+    MatCardModule,
+  MatInputModule
   ],
 
   exports: [
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    MatCardModule,
     MatListModule,
-    MatSidenavModule,MatFormFieldModule
+    MatSidenavModule,MatFormFieldModule,MatMenuModule, MatTabsModule,
+    MatCardModule, MatInputModule
   ]
 })
 export class AppCMSMaterialModule{}

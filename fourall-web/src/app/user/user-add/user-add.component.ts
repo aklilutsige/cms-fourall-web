@@ -2,7 +2,7 @@ import { UserService } from 'src/app/services/user.service';
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/common/user';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-user-add',

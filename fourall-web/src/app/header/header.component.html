@@ -1,19 +1,33 @@
-<p>
+<div>
   <mat-toolbar>
-   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>CMS-FourAll</span>
-  <span class="header-spacer"></span>
-  <button mat-icon-button color="black" title="exit to app">
-    <mat-icon>exit_to_app</mat-icon>
-  </button>
-  <button mat-icon-button color="black" title="Mange accounts setting">
-    <mat-icon>manage_accounts</mat-icon>
-  </button>
-  <button mat-icon-button color="black" title="user account photo">
-    <mat-icon>account_circle</mat-icon>
-  </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>CMS-Ethiopian</span>
+    <span class="header-spacer"></span>
+    <button mat-icon-button  title="user account photo">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <!--
+      Sign-in or sign-out
+    -->
+    <button mat-icon-button title="Sign-in /sign-out">
+      <mat-icon [routerLink]="['/login']" routerLinkActive="router-link-active" >exit_to_app</mat-icon>
+    </button>      
 
-</mat-toolbar>
-</p>
+    <!--
+      Setting
+    -->
+    <button mat-icon-button [matMenuTriggerFor]="menuSetting" title="Profile Setting" ><mat-icon>settings</mat-icon></button>
+    <mat-menu #menuSetting="matMenu">
+      <button href="#" mat-menu-item>Change photo</button>
+      <button href="#" mat-menu-item>Change photo</button>
+      <mat-divider></mat-divider>
+      <button href="#" mat-menu-item>Profile settings</button>
+    </mat-menu>    
+  </mat-toolbar>
+</div>

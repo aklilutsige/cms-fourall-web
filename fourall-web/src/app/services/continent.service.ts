@@ -1,5 +1,5 @@
 import { map } from 'rxjs/operators';
-import { Continent, IContinent } from './../common/continent';
+import { Continent, IContinent } from '../models/continent';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -37,7 +37,7 @@ export class ContinentService {
    * @param newContinent Inserted new continent
    */
   addNewContinent(newContinent: Continent) {
-    this.httpClient.post(this.baseUrl +'continent/', newContinent)
+    this.httpClient.post(this.baseUrl +'continent/',newContinent)
     .subscribe((response) => {
       console.log(response);
     });

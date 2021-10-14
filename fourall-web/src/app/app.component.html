@@ -1,11 +1,13 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <app-header></app-header>
-<div class="cms-nav">
+<div class="card text-center">
+<div class="chard-header">
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">User</a>
+      <a class="nav-link active" aria-current="page" routerLink="/user/list" routerLinkActive="active">User</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/continent/continent" routerLinkActive="active" >Comunity info[Continent]</a>
     </li>
     <li class="nav-item">
       <a class="nav-link">Member</a>
@@ -21,31 +23,13 @@
     </li>
   </ul>
 </div>
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-10">
-    <div>
-      <!--<label>User Name</label>-->
-      <!-- <input  type="text" (input)="onUpdateUserName($event)"/> -->
-      <!--<input type="text" [(ngModel)]="userName" />
-      <button (click)="addNewUser()">Add User</button>
-      <div *ngIf="userListStatus; else noUserList">
-        <ul
-          class="list-group"
-          *ngFor="let user of getUserNameList(); let i = index"
-        >
-          <li class="list-group-item" (dblclick)="onRemoveUser(i)">
-            {{ user }}
-          </li>
-        </ul>
-      </div>
-      <ng-template #noUserList>
-        <p>No user list</p>
-      </ng-template>
-    -->
-    </div>
-    <div class="col-md-10">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+</div>
+<div class="card-body container">
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+    <router-outlet></router-outlet>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 </div>

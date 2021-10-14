@@ -1,0 +1,20 @@
+
+<div class="form-group">
+
+  <br />
+  <div >
+    <label>Continent Name</label>
+    <input [(ngModel)]="continetName" type="text" class="form-control" />
+  </div>
+  <div>
+    <label>Continent Description</label>
+    <textarea [(ngModel)]="continetDescription"  rows="3" class="form-control"></textarea>
+  </div>
+  <div >
+    <hr />
+    <label>Continent image</label>
+    <input (change)="onFileChanged($event)" type="file" class="form-control-file" />
+  </div>
+  <hr />
+  <button (click)="onInsertContinet()"   type="submit" class="btn btn-primary">Insert</button>
+</div>

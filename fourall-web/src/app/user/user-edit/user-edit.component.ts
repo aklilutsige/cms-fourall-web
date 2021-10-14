@@ -2,7 +2,7 @@
 import { UserService } from 'src/app/services/user.service';
 import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { IUser, User } from 'src/app/common/user';
+import { IUser, User } from 'src/app/models/user';
 import { ContentObserver } from '@angular/cdk/observers';
 
 @Component({
