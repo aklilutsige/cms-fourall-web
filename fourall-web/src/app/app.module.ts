@@ -17,6 +17,9 @@ import { ContinentService } from './services/continent.service';
 import { UpdateDeleteContinentComponent } from './continent/update-delete-continent/update-delete-continent.component';
 import { ListContinentComponent } from './continent/list-continent/list-continent.component';
 import { LoginLogoutComponent } from './loginLogout/login-logout/login-logout.component';
+import { MemberComponent } from './member/member.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ProgrammeEventComponent } from './programme-event/programme-event.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { LoginLogoutComponent } from './loginLogout/login-logout/login-logout.co
   routingComponents,
   UpdateDeleteContinentComponent,
   ListContinentComponent,
-  LoginLogoutComponent
+  LoginLogoutComponent,
+  MemberComponent,
+  PaymentComponent,
+  ProgrammeEventComponent
 ],
   imports: [
     BrowserModule,
