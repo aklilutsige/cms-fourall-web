@@ -13,8 +13,11 @@ export class AddContinentComponent implements OnInit {
   continentId:number = 0;
   continetName:string ="";
   continetDescription:string="";
-  continetImage:any;
+  continetImage:string ="";
   newContinent:IContinent;
+  insertConfirmation:boolean =false;
+  errorMessage:boolean = false;
+  addNewContinent:boolean =true;
 
   constructor(private continentService:ContinentService) { }
   ngOnInit(): void { }
@@ -26,22 +29,32 @@ export class AddContinentComponent implements OnInit {
   onFileChanged(event:any){
     this.selectedFile = event.target.files[0];
   }
+  resetAddNewContinetForm(){
+     this.continentId=0;
+      this.continetName="";
+      this.continetDescription="";
+      this.continetImage="";      
+      this.insertConfirmation = false;
+    this.addNewContinent = true;
+  }
 
   /**
    *
    */
-  onInsertContinet(){
-    const uploadImageData = new FormData();
-    uploadImageData.append('imageFile',this.selectedFile, this.selectedFile.name)
-
+  onAddNewContinet(){
     this.newContinent = new Continent(<Continent>{
       continentId:this.continentId,
       continentName:this.continetName,
       continentDescription:this.continetDescription,
-      continentImage:uploadImageData
+      continentImage:this.selectedFile.name
     });
-    console.table(this.newContinent);
-    this.continentService.addNewContinent(this.newContinent);
+    /**
+    *
+    added continent using continent service [POST] */
+    this.continentService.addNewContinent(this.newContinent);    
+    this.insertConfirmation = true;
+    this.addNewContinent = false;
+    
   }
 
 }

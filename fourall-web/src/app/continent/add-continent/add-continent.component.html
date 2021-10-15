@@ -1,20 +1,36 @@
-
 <div class="form-group">
-
-  <br />
-  <div >
-    <label>Continent Name</label>
-    <input [(ngModel)]="continetName" type="text" class="form-control" />
-  </div>
   <div>
-    <label>Continent Description</label>
-    <textarea [(ngModel)]="continetDescription"  rows="3" class="form-control"></textarea>
+    <div *ngIf="insertConfirmation" class="alert alert-success" role="alert">
+      <p>Successfuly added</p>
+      <div><button mat-raised-button (click)="resetAddNewContinetForm()"  >Add new</button></div>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      Error : alert—check !
+    </div>
   </div>
-  <div >
+  <div *ngIf="addNewContinent" >
+    <mat-card-title>
+      <p>Add new Continent</p>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <br />
+    <div >
+      <label>Continent Name</label>
+      <input [(ngModel)]="continetName" type="text" class="form-control" />
+    </div>
+    <div>
+      <label>Continent Description</label>
+      <textarea [(ngModel)]="continetDescription"  rows="3" class="form-control"></textarea>
+    </div>
+    <div >
+      <hr />
+      <label>Continent image</label>
+      <input (change)="onFileChanged($event)" type="file" class="form-control-file" />
+    </div>
     <hr />
-    <label>Continent image</label>
-    <input (change)="onFileChanged($event)" type="file" class="form-control-file" />
+    <div class="continent-button-row">
+    <button mat-raised-button [routerLink]="['/home']" routerLinkActive="router-link-active"    type="submit" class="btn btn-primary">Cancel</button>
+    <button mat-raised-button (click)="onAddNewContinet()"   type="submit" class="btn btn-primary">Save</button>
+    </div>
   </div>
-  <hr />
-  <button (click)="onInsertContinet()"   type="submit" class="btn btn-primary">Insert</button>
 </div>

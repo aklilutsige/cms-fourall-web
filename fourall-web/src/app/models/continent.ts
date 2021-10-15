@@ -1,7 +1,7 @@
 export class Continent {
   continentId:number
   continentName:string
-  continentImage:any
+  continentImage:string
   continentDescription:string
 
   public constructor(init?:Partial<Continent>){
@@ -12,6 +12,6 @@ export class Continent {
 export interface IContinent {
   continentId:number
   continentName:string
-  continentImage:any
+  continentImage:string
   continentDescription:string
 }

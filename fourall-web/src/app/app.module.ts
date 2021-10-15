@@ -21,6 +21,7 @@ import { ListContinentComponent } from './continent/list-continent/list-continen
 import { HomeComponent } from './home/home/home.component';
 import { PageNotFoundComponent } from './pageNotFound/page-not-found/page-not-found.component';
 import { LoginLogoutComponent } from './loginLogout/login-logout/login-logout.component';
+import { CountryComponent } from './country/country.component';
 
 
 
@@ -36,7 +37,7 @@ import { LoginLogoutComponent } from './loginLogout/login-logout/login-logout.co
   ListContinentComponent, 
   HomeComponent, 
   PageNotFoundComponent, 
-  LoginLogoutComponent
+  LoginLogoutComponent, CountryComponent
 ],
   imports: [
     BrowserModule,
