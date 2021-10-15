@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user-list.component.scss'],
 })
 export class UserListComponent implements OnInit {
-  users: User[];
+  users: User[] = [];
   userById: User;
   userIdTest: number = 1;
 
@@ -25,7 +25,11 @@ export class UserListComponent implements OnInit {
   }
   getUsersListOrderByFirstName(){
 
-    return  this.users.sort((u1, u2) => 0 - (u1.firstName  < u2.firstName ? 1 : -1));
+    return  this.users.sort((u1:User, u2:User) => {
+      if(u1.firstName < u2.firstName){ return -1; }
+      if(u1.firstName > u2.firstName){ return 1; }
+      return 0;
+    });
   }
   setUserById(userId:number){
     this.userService.getUserById(userId).subscribe((data)=>{this.userById = data})

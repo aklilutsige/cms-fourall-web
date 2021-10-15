@@ -10,9 +10,11 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { HomeComponent } from './home/home/home.component';
 import { PageNotFoundComponent } from './pageNotFound/page-not-found/page-not-found.component';
 import { LoginLogoutComponent } from './loginLogout/login-logout/login-logout.component';
+import { CountryComponent } from './country/country.component';
 
 
-const routes: Routes = [ 
+const routes: Routes = [
+  {path: 'country/countries', component:CountryComponent},
   {path:'continent/continent', component:AddContinentComponent},
   {path:'user/list',component:UserListComponent},
   {path:'user/add', component: UserAddComponent},
@@ -30,6 +32,7 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [
+  CountryComponent,
   AddContinentComponent,
   UserAddComponent,
   UserListComponent,
