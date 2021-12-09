@@ -7,7 +7,7 @@
     >
       <mat-icon>menu</mat-icon>
     </button>
-    <span>CMS-Ethiopian</span>
+    <span routerLink="/home" routerLinkActive="active" >CMS-Ethiopian</span>
     <span class="header-spacer"></span>
     <button mat-icon-button  title="user account photo">
       <mat-icon>account_circle</mat-icon>
@@ -17,7 +17,7 @@
     -->
     <button mat-icon-button title="Sign-in /sign-out">
       <mat-icon [routerLink]="['/login']" routerLinkActive="router-link-active" >exit_to_app</mat-icon>
-    </button>      
+    </button>
 
     <!--
       Setting
@@ -28,6 +28,6 @@
       <button href="#" mat-menu-item>Change photo</button>
       <mat-divider></mat-divider>
       <button href="#" mat-menu-item>Profile settings</button>
-    </mat-menu>    
+    </mat-menu>
   </mat-toolbar>
 </div>

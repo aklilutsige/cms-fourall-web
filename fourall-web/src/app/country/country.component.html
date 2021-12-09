@@ -1,1 +1,129 @@
-<p>country works!</p>
+<mat-tab-group animationDuration="0ms" mat-align-tabs="end">
+  <mat-tab label="First">
+    <ng-template mat-tab-label>
+      <mat-icon class="country-tab-icon">add_circle_outline</mat-icon>
+      Add Country
+    </ng-template>
+    <div>
+      <div>
+        <mat-accordion class="example-headers-align">
+          <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+               Country
+              </mat-panel-title>
+              <mat-panel-description>
+                Name, capital, and language
+                <mat-icon> language</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Country Name</mat-label>
+              <input matInput>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Country Name</mat-label>
+              <input matInput>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Country Name</mat-label>
+              <input matInput>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Capital City</mat-label>
+              <input matInput >
+            </mat-form-field>
+            <mat-action-row>
+              <button mat-button color="primary" (click)="nextStep()">Next</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Code
+              </mat-panel-title>
+              <mat-panel-description>
+                Dialing code, country code and flag
+                <mat-icon>flag_circle</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Country</mat-label>
+              <input matInput>
+            </mat-form-field>
+
+            <mat-action-row>
+              <button mat-button color="warn" (click)="prevStep()">Previous</button>
+              <button mat-button color="primary" (click)="nextStep()">Next</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Location
+              </mat-panel-title>
+              <mat-panel-description>
+                Inform the date you wish to travel
+                <mat-icon>location_on</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-action-row>
+              <button mat-button color="warn" (click)="prevStep()">Previous</button>
+              <button mat-button color="primary" (click)="nextStep()">End</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+          <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Description
+              </mat-panel-title>
+              <mat-panel-description>
+                Inform the date you wish to travel
+                <mat-icon>description</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-action-row>
+              <button mat-button color="warn" (click)="prevStep()">Previous</button>
+              <button mat-button color="primary" (click)="nextStep()">End</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="First">
+    <ng-template mat-tab-label>
+      <mat-icon class="country-tab-icon">edit_note</mat-icon>
+      Modify
+    </ng-template>
+    <div>
+      Modify [ToDo]
+    </div>
+  </mat-tab>
+
+  <mat-tab label="First">
+    <ng-template mat-tab-label>
+      <mat-icon class="country-tab-icon">search</mat-icon>
+      Search
+    </ng-template>
+    <div>
+      Search [ToDo]
+    </div>
+  </mat-tab>
+  <mat-tab label="First">
+    <ng-template mat-tab-label>
+      <mat-icon class="country-tab-icon">menu</mat-icon>
+      customize and control
+    </ng-template>
+    <div>
+      customize and control [ToDo]
+    </div>
+  </mat-tab>
+</mat-tab-group>

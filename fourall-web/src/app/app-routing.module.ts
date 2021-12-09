@@ -11,10 +11,16 @@ import { HomeComponent } from './home/home/home.component';
 import { PageNotFoundComponent } from './pageNotFound/page-not-found/page-not-found.component';
 import { LoginLogoutComponent } from './loginLogout/login-logout/login-logout.component';
 import { CountryComponent } from './country/country.component';
+import { MemberComponent } from './member/member.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ProgrammeEventComponent } from './programme-event/programme-event.component';
 
 
 const routes: Routes = [
-  {path: 'country/countries', component:CountryComponent},
+  {path:'members', component:MemberComponent},
+  {path:'payments', component:PaymentComponent},
+  {path:'programme-events', component:ProgrammeEventComponent},
+  {path:'country/countries', component:CountryComponent},
   {path:'continent/continent', component:AddContinentComponent},
   {path:'user/list',component:UserListComponent},
   {path:'user/add', component: UserAddComponent},
